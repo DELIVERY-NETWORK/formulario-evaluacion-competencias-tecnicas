@@ -1,0 +1,82 @@
+/* Tema claro */
+.light-theme {
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+  --card-background-color: #ffffff;
+  --input-background-color: #ffffff;
+  --input-text-color: #343a40;
+  --button-background-color: #007bff;
+  --button-text-color: #ffffff;
+}
+
+/* Tema oscuro */
+.dark-theme {
+  --background-color: #343a40;
+  --text-color: #ffffff;
+  --card-background-color: #424242;
+  --input-background-color: #424242;
+  --input-text-color: #ffffff;
+  --button-background-color: #007bff;
+  --button-text-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+.container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.btn {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+}
+
+.button {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+}
+
+.card {
+  background-color: var(--card-background-color);
+}
+.card .card-header {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+}
+
+.text-center {
+  color: var(--text-color);
+}
+
+.card .card-body {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+}
+
+.card .card-body .card-title {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+}
+
+.form-control {
+  background-color: var(--input-background-color);
+  color: var(--input-text-color);
+}
+
+
+.form-group  {
+  background-color: var(--input-background-color);
+  color: var(--input-text-color);
+}
+
+.form-group label {
+  background-color: var(--input-background-color);
+  color: var(--input-text-color);
+}
+
+.btn-primary {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+}

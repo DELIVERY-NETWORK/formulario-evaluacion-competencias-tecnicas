@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnChanges, Output, output, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnChanges, Output, output, SimpleChanges } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-conocimientos-programacion',
@@ -9,45 +9,87 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './conocimientos-programacion.component.css',
 })
 export class ConocimientosProgramacionComponent implements OnChanges {
+
   miFormulario!: FormGroup;
 
-  @Output()
-  sendFormularioLenguageProgramacion:EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
+  @Input()
+  flagEnvioFormulario: boolean = false;
+
+  @Output() sendFormularioLenguageProgramacion: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
   constructor(private fb: FormBuilder) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('changes', changes);
+    if (!changes['flagEnvioFormulario'].firstChange) {
+      setTimeout(() => {
+        this.sendFormularioLenguageProgramacion.emit(this.miFormulario);
+      }, 2000);
+    }
   }
+
 
   ngOnInit(): void {
     this.miFormulario = this.fb.group({
-      pythonNivel: ['', Validators.required],
-      pythonAnios: ['', [Validators.required, Validators.min(0)]],
-      javaNivel: ['', Validators.required],
-      javaAnios: ['', [Validators.required, Validators.min(0)]],
-      javascriptNivel: ['', Validators.required],
-      javascriptAnios: ['', [Validators.required, Validators.min(0)]],
-      netNivel: ['', Validators.required],
-      netAnios: ['', [Validators.required, Validators.min(0)]],
+      pythonNivel: [''],
+      pythonAnios: ['' ],
+      javaNivel: [''],
+      javaAnios: [''],
+      javascriptNivel: [''],
+      javascriptAnios: [''],
+      netNivel: [''],
+      netAnios: [''],
     });
   }
 
   onRadioChange(lenguaje: string, nivel: string, event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;
-    console.log(
-      `Lenguaje: ${lenguaje}, Nivel: ${nivel}, Checked: ${isChecked}`
-    );
-
     this.sendFormularioLenguageProgramacion.emit(this.miFormulario);
-    // Aquí puedes manejar el estado del objeto según sea necesario
+
   }
 
-  onSubmit(): void {
-    if (this.miFormulario.valid) {
-      console.log(this.miFormulario.value);
+  onCheckboxChange(lenguaje: string, nivel: string, event: Event): void {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    const formGroup = (event.target as HTMLInputElement).closest('.form-group');
+
+
+    if (isChecked) {
+      this.miFormulario.get(`${lenguaje}Nivel`)?.setValue(nivel);
+      this.uncheckOtherCheckboxes(formGroup, nivel);
+      this.focusExperienceInput(lenguaje);
+      let nom = `${lenguaje}Anios`;
+      this.miFormulario.get(nom)?.setValidators([Validators.required, Validators.min(0)]);
+      this.miFormulario.get(`${lenguaje}Anios`)?.updateValueAndValidity();
+
+
     } else {
-      console.log('Formulario no válido');
+      this.miFormulario.get(`${lenguaje}Nivel`)?.setValue('');
+      this.miFormulario.get(`${lenguaje}Anios`)?.setValue('');
+      this.miFormulario.get(`${lenguaje}Anios`)?.clearValidators();
+      this.miFormulario.get(`${lenguaje}Anios`)?.updateValueAndValidity();
     }
   }
+
+  uncheckOtherCheckboxes(formGroup: Element | null, nivel: string): void {
+    if (formGroup) {
+      const checkboxes = formGroup.querySelectorAll(`input[type="checkbox"]`);
+      checkboxes.forEach((checkbox: any) => {
+        if (checkbox.value !== nivel) {
+          checkbox.checked = false;
+        }
+      });
+    }
+  }
+
+  focusExperienceInput(lenguaje: string): void {
+    const experienceInput = document.querySelector(
+      `input[formControlName="${lenguaje}Anios"]`
+    ) as HTMLInputElement;
+    if (experienceInput) {
+      experienceInput.focus();
+    }
+  }
+
+
 }
+
+

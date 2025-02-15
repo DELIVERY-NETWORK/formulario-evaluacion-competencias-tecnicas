@@ -2,17 +2,22 @@
   <h6 class="text-center">{{title}}</h6>
 </div>
 
-<app-conocimientos-programacion (sendFormularioLenguageProgramacion)="updateFormularioLenguageProgramacion($event)" ></app-conocimientos-programacion>
-<app-conocimientos-programacion></app-conocimientos-programacion>
-<app-conocimientos-programacion></app-conocimientos-programacion>
-<app-conocimientos-programacion></app-conocimientos-programacion>
-<app-conocimientos-programacion></app-conocimientos-programacion>
-<app-conocimientos-programacion></app-conocimientos-programacion>
-<app-conocimientos-programacion></app-conocimientos-programacion>
+<app-conocimientos-programacion [flagEnvioFormulario]="flagFormularioLenguageProgramacion" (sendFormularioLenguageProgramacion)="updateFormularioLenguageProgramacion($event)" ></app-conocimientos-programacion>
 
+@if (isProcessing) {
+
+
+<div class="text-center mt-3 "  >
+  <div class="spinner-border"></div>
+  <div>
+    <p>Procesando...</p>
+
+  </div>
+</div>
+}
 
 <div  class="card mx-auto " style="max-width: 800px; margin-top: 1rem;">
-  <button class="btn btn-primary mt-0" >Enviar</button>
+  <button class="btn btn-primary mt-0" [disabled]="isProcessing" (click)="enviarForm()" >Enviar</button>
 </div>
 
 <div class="mt-3">
