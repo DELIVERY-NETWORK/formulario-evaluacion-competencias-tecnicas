@@ -14,7 +14,7 @@ export class ConocimientosFrameworkEntornosDesarrolloComponent {
   @Input()
   flagEnvioFormulario: boolean = false;
 
-  @Output() sendFormularioLenguageProgramacion: EventEmitter<FormGroup> =
+  @Output() sendFormularioFrameworkEntornosDesarrollo: EventEmitter<FormGroup> =
     new EventEmitter<FormGroup>();
 
   constructor(private fb: FormBuilder) {}
@@ -22,28 +22,27 @@ export class ConocimientosFrameworkEntornosDesarrolloComponent {
   ngOnChanges(changes: SimpleChanges): void {
     if (!changes['flagEnvioFormulario'].firstChange) {
       setTimeout(() => {
-        this.sendFormularioLenguageProgramacion.emit(this.miFormulario);
+        this.sendFormularioFrameworkEntornosDesarrollo.emit(this.miFormulario);
       }, 2000);
     }
   }
 
   ngOnInit(): void {
     this.miFormulario = this.fb.group({
-      pythonNivel: [''],
-      pythonAnios: [''],
-      javaNivel: [''],
-      javaAnios: [''],
-      javascriptNivel: [''],
-      javascriptAnios: [''],
-      netNivel: [''],
-      netAnios: [''],
+      nodejsNivel: [''],
+      nodejsAnios: [''],
+      reactNivel: [''],
+      reactAnios: [''],
+      angularNivel: [''],
+      angularAnios: [''],
+      djangoNivel: [''],
+      djangoAnios: [''],
+      fastapiNivel: [''],
+      fastapiAnios: [''],
     });
   }
 
-  onRadioChange(lenguaje: string, nivel: string, event: Event): void {
-    const isChecked = (event.target as HTMLInputElement).checked;
-    this.sendFormularioLenguageProgramacion.emit(this.miFormulario);
-  }
+
 
   onCheckboxChange(lenguaje: string, nivel: string, event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;

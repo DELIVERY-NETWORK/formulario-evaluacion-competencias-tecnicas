@@ -41,11 +41,7 @@ export class ConocimientosProgramacionComponent implements OnChanges {
     });
   }
 
-  onRadioChange(lenguaje: string, nivel: string, event: Event): void {
-    const isChecked = (event.target as HTMLInputElement).checked;
-    this.sendFormularioLenguageProgramacion.emit(this.miFormulario);
 
-  }
 
   onCheckboxChange(lenguaje: string, nivel: string, event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;
