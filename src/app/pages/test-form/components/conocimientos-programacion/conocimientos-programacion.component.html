@@ -1,0 +1,100 @@
+<div class="card mx-auto mt-4" style="max-width: 800px;">
+  <div class="card-body">
+    <h5 class="card-title">Conocimientos y Experiencia en Lenguajes de Programación</h5>
+    <form [formGroup]="miFormulario" (ngSubmit)="onSubmit()" class="d-flex flex-column p-3">
+      <div class="form-group mb-0">
+
+        <div class="d-flex align-items-center">
+          <label for="python" class="me-3" style="min-width: 100px;">Python</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="pythonNivel" value="Básico" (change)="onRadioChange('python', 'Basico', $event)" >
+            <label class="form-check-label">Básico</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="pythonNivel" value="Intermedio" (change)="onRadioChange('python', 'Intermedio', $event)">
+            <label class="form-check-label">Intermedio</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="pythonNivel" value="Avanzado" (change)="onRadioChange('python', 'Avanzado', $event)">
+            <label class="form-check-label">Avanzado</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="pythonNivel" value="Experto" (change)="onRadioChange('python', 'Experto', $event)">
+            <label class="form-check-label">Experto</label>
+          </div>
+          <input type="number" formControlName="pythonAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+        </div>
+      </div>
+      <div class="form-group mb-0">
+
+        <div class="d-flex align-items-center">
+        <label for="java" class="me-3" style="min-width: 100px;">Java</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="javaNivel" value="Básico" (change)="onRadioChange('java', 'Basico', $event)">
+            <label class="form-check-label">Básico</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="javaNivel" value="Intermedio" (change)="onRadioChange('java', 'Intermedio', $event)">
+            <label class="form-check-label">Intermedio</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="javaNivel" value="Avanzado" (change)="onRadioChange('java', 'Avanzado', $event)">
+            <label class="form-check-label">Avanzado</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="javaNivel" value="Experto" (change)="onRadioChange('java', 'Experto', $event)" >
+            <label class="form-check-label">Experto</label>
+          </div>
+          <input type="number" formControlName="javaAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+        </div>
+      </div>
+      <div class="form-group mb-0">
+
+        <div class="d-flex align-items-center">
+          <label for="javascript" class="me-3" style="min-width: 100px;">JavaScript</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="javascriptNivel" value="Básico" (change)="onRadioChange('JavaScript', 'Basico', $event)">
+            <label class="form-check-label">Básico</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="javascriptNivel" value="Intermedio" (change)="onRadioChange('JavaScript', 'Intermedio', $event)">
+            <label class="form-check-label">Intermedio</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="javascriptNivel" value="Avanzado"  (change)="onRadioChange('JavaScript', 'Avanzado', $event)">
+            <label class="form-check-label">Avanzado</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="javascriptNivel" value="Experto"  (change)="onRadioChange('JavaScript', 'Experto', $event)">
+            <label class="form-check-label">Experto</label>
+          </div>
+          <input type="number" formControlName="javascriptAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+        </div>
+      </div>
+      <div class="form-group mb-0">
+
+        <div class="d-flex align-items-center">
+          <label for="net" class="me-3" style="min-width: 100px;">.NET</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="netNivel" value="Básico"  (change)="onRadioChange('.NET', 'Basico', $event)">
+            <label class="form-check-label">Básico</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="netNivel" value="Intermedio"  (change)="onRadioChange('.NET', 'Intermedio', $event)">
+            <label class="form-check-label">Intermedio</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="netNivel" value="Avanzado" (change)="onRadioChange('.NET', 'Avanzado', $event)">
+            <label class="form-check-label">Avanzado</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="netNivel" value="Experto"  (change)="onRadioChange('.NET', 'Experto', $event)">
+            <label class="form-check-label">Experto</label>
+          </div>
+          <input type="number" formControlName="netAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

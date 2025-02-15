@@ -1,0 +1,24 @@
+<div class="card mx-auto mt-4" style="max-width: 800px;">
+  <div class="card-body">
+    <h5 class="card-title">Formulario de Registro</h5>
+    <form [formGroup]="miFormulario" (ngSubmit)="onSubmit()" class="d-flex flex-column p-3">
+      <div class="form-group mb-3">
+        <label for="nombres" class="form-label">Nombres</label>
+        <input type="text" id="nombres" formControlName="nombres" class="form-control">
+      </div>
+      <div class="form-group mb-3">
+        <label for="apellidos" class="form-label">Apellidos</label>
+        <input type="text" id="apellidos" formControlName="apellidos" class="form-control">
+      </div>
+      <div class="form-group mb-3">
+        <label for="celular" class="form-label">Número Celular</label>
+        <input type="text" id="celular" formControlName="celular" class="form-control">
+      </div>
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+    </form>
+  </div>
+</div>

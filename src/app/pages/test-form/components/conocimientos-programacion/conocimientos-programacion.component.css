@@ -1,0 +1,29 @@
+.form-group label {
+  font-size: 0.5rem;
+  /* Tamaño de fuente más pequeño para las etiquetas */
+  margin-bottom: 0.15rem;
+}
+
+
+.form-group {
+  font-size: 0.7rem;
+  /* Tamaño de fuente más pequeño para los campos de entrada */
+
+
+}
+
+
+
+.experiencia-input {
+  padding: 0.3rem;
+  /* Reducir el padding del input de años de experiencia */
+  font-size: 0.5rem;
+  /* Aumentar el tamaño de la fuente del input de años de experiencia */
+  min-width: 3rem;
+  max-width: 7rem;
+}
+
+.card-title {
+  font-size: 0.7rem;
+  /* Reducir el tamaño de la fuente del título de la tarjeta */
+}
