@@ -1,10 +1,23 @@
-<div  class="card mx-auto mb-0" style="max-width: 800px; margin-top: 1rem;">
+<div  class="card mx-auto mb-0" style="max-width: 850px; margin-top: 1rem;">
   <h6 class="text-center">{{title}}</h6>
 </div>
+<div class="mx-auto mb-0" style="max-width: 850px; margin-top: 1rem;">
+  <small >Campo requerido </small> <small style="color: red;">*</small>
+</div>
 
-<app-conocimientos-programacion [flagEnvioFormulario]="flagFormularioLenguageProgramacion" (sendFormularioLenguageProgramacion)="updateFormularioLenguageProgramacion($event)" ></app-conocimientos-programacion>
+<app-conocimientos-programacion [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)" ></app-conocimientos-programacion>
 
-<app-conocimientos-framework-entornos-desarrollo [flagEnvioFormulario]="flagFormularioLenguageProgramacion" (sendFormularioFrameworkEntornosDesarrollo)="updateFormularioLenguageProgramacion($event)" ></app-conocimientos-framework-entornos-desarrollo>
+<app-conocimientos-framework-entornos-desarrollo [flagEnvioFormulario]="flagFormulario" (sendFormularioFrameworkEntornosDesarrollo)="updateFormulario($event)" ></app-conocimientos-framework-entornos-desarrollo>
+
+<app-integracion-plataformas-apis  [flagEnvioFormulario]="flagFormulario" (sendIntegracionPlataformasApis)="updateFormulario($event)" ></app-integracion-plataformas-apis>
+
+<app-conocimiento-infraestructura-nube-devops  [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)"  ></app-conocimiento-infraestructura-nube-devops>
+
+<app-base-datos [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)"></app-base-datos>
+
+<app-desarrollo-interfaces-front [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)"></app-desarrollo-interfaces-front>
+
+<app-experiencia-metodologias-agiles  [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)"></app-experiencia-metodologias-agiles>
 
 @if (isProcessing) {
 

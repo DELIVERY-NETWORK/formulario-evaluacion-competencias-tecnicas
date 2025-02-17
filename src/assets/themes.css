@@ -7,6 +7,7 @@
   --input-text-color: #343a40;
   --button-background-color: #007bff;
   --button-text-color: #ffffff;
+  --placeholder-color: #6c757d;
 }
 
 /* Tema oscuro */
@@ -18,6 +19,7 @@
   --input-text-color: #ffffff;
   --button-background-color: #007bff;
   --button-text-color: #ffffff;
+  --placeholder-color: #ffffff;
 }
 
 body {
@@ -79,4 +81,14 @@ body {
 .btn-primary {
   background-color: var(--button-background-color);
   color: var(--button-text-color);
+}
+
+.experiencia-input::placeholder {
+  color: var(--placeholder-color) !important;
+}
+
+/* Placeholder color for dark theme */
+.dark-theme .form-control::placeholder,
+.dark-theme .experiencia-input::placeholder {
+  color: #ffffff !important;
 }

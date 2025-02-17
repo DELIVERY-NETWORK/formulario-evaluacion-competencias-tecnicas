@@ -9,7 +9,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'apptest';
+  title = 'Evaluacion Tecnica';
   isDarkTheme: boolean = false;
 
 

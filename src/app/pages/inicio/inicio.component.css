@@ -1,10 +1,10 @@
 .form-group label {
-  font-size: 0.875rem;
+  font-size: 1rem;
   /* Tamaño de fuente más pequeño para las etiquetas */
   margin-bottom: 0.15rem;
 }
 
 .form-control {
-  font-size: 0.5rem;
+  font-size: 0.9rem;
   /* Tamaño de fuente más pequeño para los campos de entrada */
 }

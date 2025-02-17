@@ -1,4 +1,4 @@
-<div class="card mx-auto mt-4" style="max-width: 800px;">
+<div class="card mx-auto mt-4" style="max-width: 850px;">
   <div class="card-body">
     <h5 class="card-title">1. Conocimientos y Experiencia en Lenguajes de Programación</h5>
     <form [formGroup]="miFormulario"  class="d-flex flex-column p-3">
@@ -23,6 +23,11 @@
             <label class="form-check-label">Experto</label>
           </div>
           <input type="number" formControlName="pythonAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          @if(miFormulario.get('pythonAnios')?.invalid ){
+            <div class="text-danger mt-1 ms-2">
+              <small>*</small>
+            </div>
+          }
         </div>
       </div>
       <div class="form-group mb-0">
@@ -46,6 +51,11 @@
             <label class="form-check-label">Experto</label>
           </div>
           <input type="number" formControlName="javaAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          @if(miFormulario.get('javaAnios')?.invalid ){
+            <div class="text-danger mt-1 ms-2">
+              <small>*</small>
+            </div>
+          }
         </div>
       </div>
       <div class="form-group mb-0">
@@ -69,6 +79,11 @@
             <label class="form-check-label">Experto</label>
           </div>
           <input type="number" formControlName="javascriptAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          @if(miFormulario.get('javascriptAnios')?.invalid ){
+            <div class="text-danger mt-1 ms-2">
+              <small>*</small>
+            </div>
+          }
         </div>
       </div>
       <div class="form-group mb-0">
@@ -92,6 +107,11 @@
             <label class="form-check-label">Experto</label>
           </div>
           <input type="number" formControlName="netAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          @if(miFormulario.get('netAnios')?.invalid ){
+            <div class="text-danger mt-1 ms-2">
+              <small>*</small>
+            </div>
+          }
         </div>
       </div>
 

@@ -1,21 +1,21 @@
-import { Component, EventEmitter, Input, OnChanges, Output, output, SimpleChanges } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-conocimientos-programacion',
+  selector: 'app-base-datos',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './conocimientos-programacion.component.html',
-  styleUrl: './conocimientos-programacion.component.css',
+  templateUrl: './base-datos.component.html',
+  styleUrl: './base-datos.component.css',
 })
-export class ConocimientosProgramacionComponent implements OnChanges {
-
+export class BaseDatosComponent {
   miFormulario!: FormGroup;
 
   @Input()
   flagEnvioFormulario: boolean = false;
 
-  @Output() sendFormulario: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
+  @Output() sendFormulario: EventEmitter<FormGroup> =
+    new EventEmitter<FormGroup>();
 
   constructor(private fb: FormBuilder) {}
 
@@ -27,36 +27,38 @@ export class ConocimientosProgramacionComponent implements OnChanges {
     }
   }
 
-
   ngOnInit(): void {
     this.miFormulario = this.fb.group({
-      pythonNivel: [''],
-      pythonAnios: ['' ],
-      javaNivel: [''],
-      javaAnios: [''],
-      javascriptNivel: [''],
-      javascriptAnios: [''],
-      netNivel: [''],
-      netAnios: [''],
+      postgresNivel: [''],
+      postgresAnios: [''],
+      mongodbNivel: [''],
+      mongodbAnios: [''],
+      mysqlNivel: [''],
+      mysqlAnios: [''],
+      bigqueryNivel: [''],
+      bigqueryAnios: [''],
+      redshiftNivel: [''],
+      redshiftAnios: [''],
+      snowflakeNivel: [''],
+      snowflakeAnios: [''],
+      apachekafkaNivel: [''],
+      apachekafkaAnios: [''],
     });
   }
-
-
 
   onCheckboxChange(lenguaje: string, nivel: string, event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;
     const formGroup = (event.target as HTMLInputElement).closest('.form-group');
-
 
     if (isChecked) {
       this.miFormulario.get(`${lenguaje}Nivel`)?.setValue(nivel);
       this.uncheckOtherCheckboxes(formGroup, nivel);
       this.focusExperienceInput(lenguaje);
       let nom = `${lenguaje}Anios`;
-      this.miFormulario.get(nom)?.setValidators([Validators.required, Validators.min(0)]);
+      this.miFormulario
+        .get(nom)
+        ?.setValidators([Validators.required, Validators.min(0)]);
       this.miFormulario.get(`${lenguaje}Anios`)?.updateValueAndValidity();
-
-
     } else {
       this.miFormulario.get(`${lenguaje}Nivel`)?.setValue('');
       this.miFormulario.get(`${lenguaje}Anios`)?.setValue('');
@@ -84,8 +86,4 @@ export class ConocimientosProgramacionComponent implements OnChanges {
       experienceInput.focus();
     }
   }
-
-
 }
-
-

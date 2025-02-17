@@ -2,6 +2,7 @@
   font-size: 0.9rem;
   /* Tamaño de fuente más pequeño para las etiquetas */
   margin-bottom: 0.15rem;
+
 }
 
 
@@ -26,11 +27,3 @@
   font-size: 1rem;
   /* Reducir el tamaño de la fuente del título de la tarjeta */
 }
-
-.form-check-input {
-  cursor: pointer;
-}
-
-
-
-

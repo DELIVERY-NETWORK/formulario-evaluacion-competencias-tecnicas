@@ -1,0 +1,42 @@
+<div class="card mx-auto mt-4" style="max-width: 850px;">
+  <div class="card-body">
+    <h5 class="card-title">7. Experiencia en Metodologías Ágiles y Equipos Multidisciplinarios</h5>
+    <form [formGroup]="miFormulario" class="d-flex flex-column p-3">
+      <div class="form-group mb-0">
+        <div class="d-flex flex-column align-items-start">
+          <div class="mb-2">
+            <label for="metodologiaagil" class="me-3" style="min-width: 100px;">¿Has trabajado con metodologías ágiles como Scrum o Kanban?</label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" formControlName="metodologiaagilNivel" value="Basico" (change)="onCheckboxChange('metodologiaagil', 'Basico', $event)">
+            <label class="form-check-label">No</label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" formControlName="metodologiaagilNivel" value="Intermedio" (change)="onCheckboxChange('metodologiaagil', 'Intermedio', $event)">
+            <label class="form-check-label">Sí, de forma ocasional</label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" formControlName="metodologiaagilNivel" value="Avanzado" (change)="onCheckboxChange('metodologiaagil', 'Avanzado', $event)">
+            <label class="form-check-label">Sí, en proyectos regulares</label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" formControlName="metodologiaagilNivel" value="Experto" (change)="onCheckboxChange('metodologiaagil', 'Experto', $event)">
+            <label class="form-check-label">Sí, con certificaciones o experiencia avanzada</label>
+          </div>
+          <div class="d-flex align-items-center mt-2">
+            <input type="number" formControlName="metodologiaagilAnios" class="form-control experiencia-input mt-2" placeholder="Años de Experiencia">
+
+            @if(miFormulario.get('metodologiaagilAnios')?.invalid ){
+              <div class="text-danger mt-1 ms-2">
+                <small>*</small>
+              </div>
+            }
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+

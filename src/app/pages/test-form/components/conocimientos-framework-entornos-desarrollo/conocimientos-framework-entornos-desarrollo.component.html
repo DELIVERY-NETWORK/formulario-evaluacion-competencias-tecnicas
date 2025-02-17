@@ -1,4 +1,4 @@
-<div class="card mx-auto mt-4" style="max-width: 800px;">
+<div class="card mx-auto mt-4" style="max-width: 850px;">
   <div class="card-body">
     <h5 class="card-title">2. Conocimiento y Experiencia con Frameworks y Entornos de Desarrollo</h5>
     <form [formGroup]="miFormulario"  class="d-flex flex-column p-3">
@@ -23,6 +23,11 @@
             <label class="form-check-label">Experto</label>
           </div>
           <input type="number" formControlName="nodejsAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          @if(miFormulario.get('nodejsAnios')?.invalid ){
+            <div class="text-danger mt-1 ms-2">
+              <small>*</small>
+            </div>
+          }
         </div>
       </div>
       <div class="form-group mb-0">
@@ -46,6 +51,11 @@
             <label class="form-check-label">Experto</label>
           </div>
           <input type="number" formControlName="reactAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          @if(miFormulario.get('reactAnios')?.invalid ){
+            <div class="text-danger mt-1 ms-2">
+              <small>*</small>
+            </div>
+          }
         </div>
       </div>
       <div class="form-group mb-0">
@@ -69,6 +79,11 @@
             <label class="form-check-label">Experto</label>
           </div>
           <input type="number" formControlName="angularAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          @if(miFormulario.get('angularAnios')?.invalid ){
+            <div class="text-danger mt-1 ms-2">
+              <small>*</small>
+            </div>
+          }
         </div>
       </div>
 
@@ -93,6 +108,11 @@
             <label class="form-check-label">Experto</label>
           </div>
           <input type="number" formControlName="djangoAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          @if(miFormulario.get('djangoAnios')?.invalid ){
+            <div class="text-danger mt-1 ms-2">
+              <small>*</small>
+            </div>
+          }
         </div>
       </div>
 
@@ -117,6 +137,11 @@
             <label class="form-check-label">Experto</label>
           </div>
           <input type="number" formControlName="fastapiAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          @if(miFormulario.get('fastapiAnios')?.invalid ){
+            <div class="text-danger mt-1 ms-2">
+              <small>*</small>
+            </div>
+          }
         </div>
       </div>
 

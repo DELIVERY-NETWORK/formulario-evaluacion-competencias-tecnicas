@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -11,9 +12,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export default class InicioComponent {
   miFormulario!: FormGroup;
 
-
-
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.miFormulario = this.fb.group({
@@ -32,5 +31,8 @@ export default class InicioComponent {
     }
   }
 
+  nextPage(): void {
 
+    this.router.navigate(['/test-form']);
+  }
 }
