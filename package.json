@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "install-recaptcha-force": "npm install ng-recaptcha@13.2.1 --force",
-    "install-dependencies-force": "npm install --force"
+    "install-recaptcha-force": "npm install @angular/google-recaptcha --force",
+    "install-dependencies-force": "npm install --force --save"
   },
   "private": true,
   "dependencies": {
