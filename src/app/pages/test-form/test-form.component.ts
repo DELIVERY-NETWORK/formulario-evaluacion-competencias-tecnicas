@@ -1,4 +1,4 @@
-import { Component,  ViewChild } from '@angular/core';
+import { Component,  inject,  ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ConocimientosProgramacionComponent } from "./components/conocimientos-programacion/conocimientos-programacion.component";
 import { ConocimientosFrameworkEntornosDesarrolloComponent } from "./components/conocimientos-framework-entornos-desarrollo/conocimientos-framework-entornos-desarrollo.component";
@@ -7,6 +7,7 @@ import { ConocimientoInfraestructuraNubeDevopsComponent } from './components/con
 import { BaseDatosComponent } from "./components/base-datos/base-datos.component";
 import { DesarrolloInterfacesFrontComponent } from './components/desarrollo-interfaces-front/desarrollo-interfaces-front.component';
 import { ExperienciaMetodologiasAgilesComponent } from './components/experiencia-metodologias-agiles/experiencia-metodologias-agiles.component';
+import { AppserviceService } from '../service/appservice.service';
 
 @Component({
   selector: 'app-test-form',
@@ -28,6 +29,7 @@ export default class TestFormComponent {
 
   flagFormulario: boolean = false;
 
+  miFormularioDatos!: FormGroup;
   miFormularioLenguageProgramacion!: FormGroup;
   miFormularioFrameworkEntornosDesarrollo!: FormGroup;
   miFormularioIntegracionPlataformasApis!: FormGroup;
@@ -59,7 +61,12 @@ export default class TestFormComponent {
   @ViewChild(ExperienciaMetodologiasAgilesComponent)
   experienciaMetodologiasAgilesComponent!: ExperienciaMetodologiasAgilesComponent;
 
-  constructor() {}
+
+  private appserviceService = inject(AppserviceService);
+
+  constructor() {
+    this.miFormularioDatos = this.appserviceService.getFormDatos();
+  }
 
   updateFormulario(form: FormGroup): void {}
 
@@ -136,6 +143,33 @@ export default class TestFormComponent {
       this.miFormularioMetodologiaAgiles,
       'Experiencia en Metodologías Ágiles'
     );
+
+
+    let data = this.miFormularioDatos.value;
+    console.log('data:', data);
+
+    let data1 = this.miFormularioLenguageProgramacion.value;
+    console.log('data1:', data1);
+
+    let data2 = this.miFormularioFrameworkEntornosDesarrollo.value;
+    console.log('data2:', data2);
+
+    let data3 = this.miFormularioIntegracionPlataformasApis.value;
+    console.log('data3:', data3);
+
+    let data4 = this.miFormularioInfraestructuraEnLaNube.value;
+    console.log('data4:', data4);
+
+    let data5 = this.miFormularioBaseDatos.value;
+    console.log('data5:', data5);
+
+    let data6 = this.miFormularioDesarrolloInterfacesFrontComponent.value;
+    console.log('data6:', data6);
+
+    let data7 = this.miFormularioMetodologiaAgiles.value;
+    console.log('data7:', data7);
+
+
 
     this.isProcessing = false;
   }

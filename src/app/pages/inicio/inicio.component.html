@@ -18,7 +18,15 @@
         <label for="email" class="form-label">Email</label>
         <input type="email" id="email" formControlName="email" class="form-control">
       </div>
-      <button type="submit" class="btn btn-primary mt-3" (click)="nextPage()"   >Siguiente</button>
+
+    <div class="form-group">
+      <re-captcha (resolved)="resolved($event)" siteKey="6LfJgNkqAAAAAJ0DIeiIWzQfBZ__z58lKb1G0FLJ"></re-captcha>
+
+    </div>
+
+      <button type="submit" class="btn btn-primary mt-3" (click)="nextPage()" [disabled]="!miFormulario.valid"  >Siguiente</button>
     </form>
   </div>
+
+
 </div>
