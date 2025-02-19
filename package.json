@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "install-recaptcha-force": "npm install ng-recaptcha@13.2.1 --force"
+    "install-recaptcha-force": "npm install ng-recaptcha@13.2.1 --force",
+    "install-dependencies-force": "npm install --force"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +21,6 @@
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
     "bootstrap": "^5.3.3",
-    "ng-recaptcha": "^13.2.1",
     "or": "^0.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
