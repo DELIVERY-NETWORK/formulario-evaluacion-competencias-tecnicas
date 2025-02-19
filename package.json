@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "install-recaptcha-force": "npm install ng-recaptcha@13.2.1 --force"
   },
   "private": true,
   "dependencies": {
