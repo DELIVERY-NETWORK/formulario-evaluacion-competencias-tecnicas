@@ -22,7 +22,7 @@
             <input class="form-check-input" type="checkbox" formControlName="postgresNivel" value="Experto" (change)="onCheckboxChange('postgres', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="postgresAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('postgresAnios', $event)" formControlName="postgresAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('postgresAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -50,7 +50,7 @@
             <input class="form-check-input" type="checkbox" formControlName="mongodbNivel" value="Experto" (change)="onCheckboxChange('mongodb', 'Experto', $event)" >
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="mongodbAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('mongodbAnios', $event)" formControlName="mongodbAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('mongodbAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -78,7 +78,7 @@
             <input class="form-check-input" type="checkbox" formControlName="mysqlNivel" value="Experto"  (change)="onCheckboxChange('mysql', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="mysqlAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('mysqlAnios', $event)" formControlName="mysqlAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('mysqlAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -107,7 +107,7 @@
             <input class="form-check-input" type="checkbox" formControlName="bigqueryNivel" value="Experto"  (change)="onCheckboxChange('bigquery', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="bigqueryAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('bigqueryAnios', $event)" formControlName="bigqueryAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('bigqueryAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -137,7 +137,7 @@
             <input class="form-check-input" type="checkbox" formControlName="redshiftNivel" value="Experto"  (change)="onCheckboxChange('redshift', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="redshiftAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('redshiftAnios', $event)" formControlName="redshiftAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('redshiftAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -166,7 +166,7 @@
             <input class="form-check-input" type="checkbox" formControlName="snowflakeNivel" value="Experto"  (change)="onCheckboxChange('snowflake', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="snowflakeAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('snowflakeAnios', $event)" formControlName="snowflakeAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('snowflakeAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -194,7 +194,7 @@
             <input class="form-check-input" type="checkbox" formControlName="apachekafkaNivel" value="Experto"  (change)="onCheckboxChange('apachekafka', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="apachekafkaAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('apachekafkaAnios', $event)" formControlName="apachekafkaAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('apachekafkaAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>

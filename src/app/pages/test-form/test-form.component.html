@@ -1,40 +1,82 @@
-<div  class="card mx-auto mb-0" style="max-width: 850px; margin-top: 1rem;">
-  <h6 class="text-center">{{title}}</h6>
+<div class="container col-md-12"  >
+
+
+    <div class="card mx-auto mb-0" style="max-width: 850px; margin-top: 1rem">
+      <h6 class="text-center">{{ title }}</h6>
+    </div>
+    <div class="mx-auto mb-0" style="max-width: 850px; margin-top: 1rem">
+      <small style="color: gray">Campo requerido </small>
+      <small style="color: red">*</small>
+    </div>
+
+    <app-conocimientos-programacion
+      [flagEnvioFormulario]="flagFormulario"
+      (sendFormulario)="updateFormulario($event)"
+    ></app-conocimientos-programacion>
+
+    <app-conocimientos-framework-entornos-desarrollo
+      [flagEnvioFormulario]="flagFormulario"
+      (sendFormularioFrameworkEntornosDesarrollo)="updateFormulario($event)"
+    ></app-conocimientos-framework-entornos-desarrollo>
+
+    <app-integracion-plataformas-apis
+      [flagEnvioFormulario]="flagFormulario"
+      (sendIntegracionPlataformasApis)="updateFormulario($event)"
+    ></app-integracion-plataformas-apis>
+
+    <app-conocimiento-infraestructura-nube-devops
+      [flagEnvioFormulario]="flagFormulario"
+      (sendFormulario)="updateFormulario($event)"
+    ></app-conocimiento-infraestructura-nube-devops>
+
+    <app-base-datos
+      [flagEnvioFormulario]="flagFormulario"
+      (sendFormulario)="updateFormulario($event)"
+    ></app-base-datos>
+
+    <app-desarrollo-interfaces-front
+      [flagEnvioFormulario]="flagFormulario"
+      (sendFormulario)="updateFormulario($event)"
+    ></app-desarrollo-interfaces-front>
+
+    <app-experiencia-metodologias-agiles
+      [flagEnvioFormulario]="flagFormulario"
+      (sendFormulario)="updateFormulario($event)"
+    ></app-experiencia-metodologias-agiles>
+
+    @if (isProcessing) {
+
+    <div class="text-center mt-3">
+      <div class="spinner-border"></div>
+      <div>
+        <p>Procesando...</p>
+      </div>
+    </div>
+    }
+
+    @if (!isProcessing) {
+      <div
+        class="card mx-auto"
+        style="max-width: 850px; margin-top: 1rem; background-color: #4f062a"
+      >
+        <!-- <button class="btn btn-primary mt-0" [disabled]="isProcessing" (click)="enviarForm()" >Enviar</button> -->
+
+        <button
+          class="bottom-right-button"
+          style="margin-left: 650px"
+          (click)="enviarForm()"
+        >
+          Enviar
+        </button>
+      </div>
+    }
+
+    <div class="mt-3"></div>
+
+
+
+
 </div>
-<div class="mx-auto mb-0" style="max-width: 850px; margin-top: 1rem;">
-  <small >Campo requerido </small> <small style="color: red;">*</small>
-</div>
-
-<app-conocimientos-programacion [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)" ></app-conocimientos-programacion>
-
-<app-conocimientos-framework-entornos-desarrollo [flagEnvioFormulario]="flagFormulario" (sendFormularioFrameworkEntornosDesarrollo)="updateFormulario($event)" ></app-conocimientos-framework-entornos-desarrollo>
-
-<app-integracion-plataformas-apis  [flagEnvioFormulario]="flagFormulario" (sendIntegracionPlataformasApis)="updateFormulario($event)" ></app-integracion-plataformas-apis>
-
-<app-conocimiento-infraestructura-nube-devops  [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)"  ></app-conocimiento-infraestructura-nube-devops>
-
-<app-base-datos [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)"></app-base-datos>
-
-<app-desarrollo-interfaces-front [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)"></app-desarrollo-interfaces-front>
-
-<app-experiencia-metodologias-agiles  [flagEnvioFormulario]="flagFormulario" (sendFormulario)="updateFormulario($event)"></app-experiencia-metodologias-agiles>
-
-@if (isProcessing) {
 
 
-<div class="text-center mt-3 "  >
-  <div class="spinner-border"></div>
-  <div>
-    <p>Procesando...</p>
 
-  </div>
-</div>
-}
-
-<div  class="card mx-auto " style="max-width: 800px; margin-top: 1rem;">
-  <button class="btn btn-primary mt-0" [disabled]="isProcessing" (click)="enviarForm()" >Enviar</button>
-</div>
-
-<div class="mt-3">
-
-</div>

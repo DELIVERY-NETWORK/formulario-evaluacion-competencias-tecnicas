@@ -1,0 +1,18 @@
+.mensaje-exito {
+  background-color: #4F062A;
+  /* Fondo morado */
+  color: white;
+  /* Color del texto blanco */
+  font-size: 2rem;
+  /* Tamaño de letra grande */
+  text-align: center;
+  /* Centrar el texto */
+  padding: 20px;
+  /* Espacio alrededor del texto */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  margin: 20px auto;
+  /* Centrar el contenedor horizontalmente */
+  max-width: 600px;
+  /* Ancho máximo del contenedor */
+}

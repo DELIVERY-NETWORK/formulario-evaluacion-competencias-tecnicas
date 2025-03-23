@@ -30,3 +30,20 @@
 .form-check-input {
   cursor: pointer;
 }
+
+.card {
+  background-color: #4F062A;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  /* Sombra en el borde inferior y derecho */
+}
+
+.card label {
+  color: rgb(184, 176, 176);
+  /* Color blanco para las etiquetas dentro de la tarjeta */
+}
+
+
+.card-body {
+
+  color: rgb(184, 176, 176);
+}

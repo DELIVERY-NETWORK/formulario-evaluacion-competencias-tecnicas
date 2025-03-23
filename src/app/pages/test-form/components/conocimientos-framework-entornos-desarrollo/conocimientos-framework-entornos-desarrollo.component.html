@@ -22,7 +22,7 @@
             <input class="form-check-input" type="checkbox" formControlName="nodejsNivel" value="Experto" (change)="onCheckboxChange('nodejs', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="nodejsAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('nodejsAnios', $event)" formControlName="nodejsAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('nodejsAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -50,7 +50,7 @@
             <input class="form-check-input" type="checkbox" formControlName="reactNivel" value="Experto" (change)="onCheckboxChange('react', 'Experto', $event)" >
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="reactAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('reactAnios', $event)" formControlName="reactAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('reactAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -78,7 +78,7 @@
             <input class="form-check-input" type="checkbox" formControlName="angularNivel" value="Experto"  (change)="onCheckboxChange('angular', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="angularAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('angularAnios', $event)" formControlName="angularAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('angularAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -107,7 +107,7 @@
             <input class="form-check-input" type="checkbox" formControlName="djangoNivel" value="Experto"  (change)="onCheckboxChange('django', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="djangoAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('djangoAnios', $event)" formControlName="djangoAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('djangoAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -136,7 +136,7 @@
             <input class="form-check-input" type="checkbox" formControlName="fastapiNivel" value="Experto"  (change)="onCheckboxChange('fastapi', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="fastapiAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('fastapiAnios', $event)" formControlName="fastapiAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('fastapiAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>

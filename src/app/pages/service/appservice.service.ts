@@ -6,6 +6,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class AppserviceService {
   flagPage: boolean = false;
+  flagPageInicio:boolean = false;
 
   formDatos! : FormGroup;
 
@@ -14,6 +15,9 @@ export class AppserviceService {
 
   changeFlagPage() {
     this.flagPage = !this.flagPage;
+  }
+  changeFlagPageInicio() {
+    this.flagPageInicio = !this.flagPageInicio;
   }
 
   setFormDatos(formDatos: FormGroup) {

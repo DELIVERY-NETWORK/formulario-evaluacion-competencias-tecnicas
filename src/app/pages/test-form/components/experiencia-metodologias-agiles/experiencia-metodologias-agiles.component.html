@@ -24,7 +24,7 @@
             <label class="form-check-label">Sí, con certificaciones o experiencia avanzada</label>
           </div>
           <div class="d-flex align-items-center mt-2">
-            <input type="number" formControlName="metodologiaagilAnios" class="form-control experiencia-input mt-2" placeholder="Años de Experiencia">
+            <input type="number" step="1" (input)="onInputChange('metodologiaagilAnios', $event)"  formControlName="metodologiaagilAnios" class="form-control experiencia-input mt-2" placeholder="Años de Experiencia">
 
             @if(miFormulario.get('metodologiaagilAnios')?.invalid ){
               <div class="text-danger mt-1 ms-2">

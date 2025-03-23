@@ -1,32 +1,124 @@
-<div class="card mx-auto mt-4" style="max-width: 800px;">
-  <div class="card-body">
-    <h5 class="card-title">Formulario de Registro</h5>
-    <form [formGroup]="miFormulario" (ngSubmit)="onSubmit()" class="d-flex flex-column p-3">
-      <div class="form-group mb-3">
-        <label for="nombres" class="form-label">Nombres</label>
-        <input type="text" id="nombres" formControlName="nombres" class="form-control">
-      </div>
-      <div class="form-group mb-3">
-        <label for="apellidos" class="form-label">Apellidos</label>
-        <input type="text" id="apellidos" formControlName="apellidos" class="form-control">
-      </div>
-      <div class="form-group mb-3">
-        <label for="celular" class="form-label">Número Celular</label>
-        <input type="text" id="celular" formControlName="celular" class="form-control">
-      </div>
-      <div class="form-group mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" id="email" formControlName="email" class="form-control">
+<div class="fondo">
+  <div class="container py-4">
+    <div
+      class="card mx-auto mt-4"
+      style=" background-color: #4f062a"
+    >
+      <div class="card-body">
+        <h5 class="card-title">Formulario de Registro</h5>
+        <form [formGroup]="miFormulario" class="d-flex flex-column p-3">
+          <div class="form-group mb-3">
+            <label for="nombres" class="form-label">Nombres</label>
+            <div class="d-flex align-items-center">
+              <input
+                type="text"
+                id="nombres"
+                formControlName="nombres"
+                class="form-control"
+              />
+              @if(miFormulario.get('nombres')?.invalid ){
+              <div class="text-danger mt-1 ms-2">
+                <small>*</small>
+              </div>
+              }
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <div class="d-flex align-items-center">
+              <input
+                type="text"
+                id="apellidos"
+                formControlName="apellidos"
+                class="form-control"
+              />
+              @if(miFormulario.get('apellidos')?.invalid ){
+              <div class="text-danger mt-1 ms-2">
+                <small>*</small>
+              </div>
+              }
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="celular" class="form-label">Número Celular</label>
+            <div class="d-flex align-items-center">
+              <input
+                type="text"
+                id="celular"
+                formControlName="celular"
+                class="form-control"
+              />
+              @if(miFormulario.get('celular')?.invalid ){
+              <div class="text-danger mt-1 ms-2">
+                <small>*</small>
+              </div>
+              }
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="email" class="form-label">Email</label>
+            <div class="d-flex align-items-center">
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-control"
+              />
+              @if(miFormulario.get('email')?.invalid ){
+              <div class="text-danger mt-1 ms-2">
+                <small>*</small>
+              </div>
+              }
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+        <re-captcha (resolved)="resolved($event)" siteKey="6LfJgNkqAAAAAJ0DIeiIWzQfBZ__z58lKb1G0FLJ"></re-captcha>
+
+      </div> -->
+        </form>
       </div>
 
-    <div class="form-group">
-      <re-captcha (resolved)="resolved($event)" siteKey="6LfJgNkqAAAAAJ0DIeiIWzQfBZ__z58lKb1G0FLJ"></re-captcha>
+      <br />
+      <hr />
+  @if (isProcessing) {
 
+  <div class="text-center mt-3">
+    <div class="spinner-border"></div>
+    <div>
+      <p>Procesando...</p>
     </div>
-
-      <button type="submit" class="btn btn-primary mt-3" (click)="nextPage()" [disabled]="!miFormulario.valid"  >Siguiente</button>
-    </form>
   </div>
+  }
+      <br />
+      <div style="margin-bottom: 20px; height: 20px">
+        <button
+          class="bottom-right-button"
+
+          (click)="nextPage()"
+          [disabled]="isProcessing"
+        >
+          Siguiente
+        </button>
+        @if (messageVisible) {
+        <div class="floating-message">
+          Falta Registrar Informacion Requerida!!
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div style="height: 40px"></div>
+</div>
 
 
+<div class="toast-container  position-fixed top-0 end-0 p-3">
+  @for (item of this.toastService.toasts; track $index) {
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-body bg-warning text-danger">
+        {{ item.message }}
+        <button type="button" class="btn-close ms-2 me-2" (click)="this.toastService.remove(item)"></button>
+      </div>
+    </div>
+  }
 </div>

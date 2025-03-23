@@ -22,7 +22,7 @@
             <input class="form-check-input" type="checkbox" formControlName="azureNivel" value="Experto" (change)="onCheckboxChange('azure', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="azureAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('azureAnios', $event)" formControlName="azureAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('azureAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -50,7 +50,7 @@
             <input class="form-check-input" type="checkbox" formControlName="awsNivel" value="Experto" (change)="onCheckboxChange('aws', 'Experto', $event)" >
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="awsAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('awsAnios', $event)" formControlName="awsAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('awsAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -78,7 +78,7 @@
             <input class="form-check-input" type="checkbox" formControlName="gcpNivel" value="Experto"  (change)="onCheckboxChange('gcp', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="gcpAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('gcpAnios', $event)" formControlName="gcpAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('gcpAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -107,7 +107,7 @@
             <input class="form-check-input" type="checkbox" formControlName="dockerNivel" value="Experto"  (change)="onCheckboxChange('docker', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="dockerAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('dockerAnios', $event)" formControlName="dockerAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('dockerAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -137,7 +137,7 @@
             <input class="form-check-input" type="checkbox" formControlName="terraformNivel" value="Experto"  (change)="onCheckboxChange('terraform', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="terraformAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('terraformAnios', $event)" formControlName="terraformAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('terraformAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -166,7 +166,7 @@
             <input class="form-check-input" type="checkbox" formControlName="airflowNivel" value="Experto"  (change)="onCheckboxChange('airflow', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="airflowAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('airflowAnios', $event)" formControlName="airflowAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('airflowAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -194,7 +194,7 @@
             <input class="form-check-input" type="checkbox" formControlName="cicdNivel" value="Experto"  (change)="onCheckboxChange('cicd', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="cicdAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('cicdAnios', $event)" formControlName="cicdAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('cicdAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>
@@ -222,7 +222,7 @@
             <input class="form-check-input" type="checkbox" formControlName="monitoreoNivel" value="Experto"  (change)="onCheckboxChange('monitoreo', 'Experto', $event)">
             <label class="form-check-label">Experto</label>
           </div>
-          <input type="number" formControlName="monitoreoAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
+          <input type="number" step="1" (input)="onInputChange('monitoreoAnios', $event)" formControlName="monitoreoAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
           @if(miFormulario.get('monitoreoAnios')?.invalid ){
             <div class="text-danger mt-1 ms-2">
               <small>*</small>

@@ -1,3 +1,17 @@
+.fondo {
+  /* background: linear-gradient(to bottom, #50062b, #50253a); */
+
+  background-image: url('/assets/images/fondo.jpg');
+  background-size: cover;
+    /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    height: 100vh;
+    /* Altura del contenedor igual a la altura de la ventana */
+}
+
 .form-group label {
   font-size: 1rem;
   /* Tamaño de fuente más pequeño para las etiquetas */
@@ -7,4 +21,101 @@
 .form-control {
   font-size: 0.9rem;
   /* Tamaño de fuente más pequeño para los campos de entrada */
+}
+
+
+.banner {
+  background-color: #550d2e;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+
+}
+
+.fondoFormulario {
+  background-color: #4F062A;
+}
+
+
+.card {
+  max-width: 800px;
+  background-color: #4F062A;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  /* Color del texto dentro de la tarjeta */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  max-width: 800px;
+  background-color: #4F062A;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  /* Sombra en el borde inferior y derecho */
+}
+
+.card-body input::placeholder {
+  color: #999;
+  /* Color del texto del placeholder */
+}
+
+.card-body button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.bottom-right-button {
+  /* Ajusta según sea necesario */
+  /* right: 10px; */
+  /* Ajusta según sea necesario */
+
+  padding: 10px 20px;
+  background-color: #720a3e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end;
+
+}
+
+.bottom-right-button:hover {
+  background-color: #5f1d3e;
+}
+
+
+.bottom-right-button:hover {
+  background-color: #5f1d3e;
+}
+
+.floating-message {
+  position: absolute;
+  bottom: 50px;
+  /* Ajusta según sea necesario */
+  right: 10px;
+  /* Ajusta según sea necesario */
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 5px;
 }

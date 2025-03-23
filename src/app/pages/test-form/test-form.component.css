@@ -1,0 +1,68 @@
+
+
+
+.card {
+  max-width: 800px;
+  background-color: #4F062A;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  /* Sombra en el borde inferior y derecho */
+}
+
+.card-body input::placeholder {
+  color: #999;
+  /* Color del texto del placeholder */
+}
+
+.card label {
+  color: white;
+  /* Color blanco para las etiquetas dentro de la tarjeta */
+}
+
+.card-body button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+.bottom-right-button {
+  /* Ajusta según sea necesario */
+  /* right: 10px; */
+  /* Ajusta según sea necesario */
+
+  padding: 10px 20px;
+  background-color: #720a3e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end;
+
+}
+
+.bottom-right-button:hover {
+  background-color: #5f1d3e;
+}
+
+
+.fondo {
+  /* background: linear-gradient(to bottom, #50062b, #50253a); */
+
+  background-image: url('/assets/images/fondo.jpg');
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el contenedor */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  height: 100vh;
+  /* Altura del contenedor igual a la altura de la ventana */
+}

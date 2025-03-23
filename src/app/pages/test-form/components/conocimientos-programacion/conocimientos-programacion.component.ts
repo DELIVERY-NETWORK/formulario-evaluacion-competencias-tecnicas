@@ -9,13 +9,15 @@ import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validatio
   styleUrl: './conocimientos-programacion.component.css',
 })
 export class ConocimientosProgramacionComponent implements OnChanges {
-
   miFormulario!: FormGroup;
 
   @Input()
   flagEnvioFormulario: boolean = false;
 
-  @Output() sendFormulario: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
+  @Output() sendFormulario: EventEmitter<FormGroup> =
+    new EventEmitter<FormGroup>();
+
+  disabled: boolean = true;
 
   constructor(private fb: FormBuilder) {}
 
@@ -27,41 +29,46 @@ export class ConocimientosProgramacionComponent implements OnChanges {
     }
   }
 
-
   ngOnInit(): void {
     this.miFormulario = this.fb.group({
       pythonNivel: [''],
-      pythonAnios: ['' ],
+      pythonAnios: [null],
       javaNivel: [''],
-      javaAnios: [''],
+      javaAnios: [null],
       javascriptNivel: [''],
-      javascriptAnios: [''],
+      javascriptAnios: [null],
       netNivel: [''],
-      netAnios: [''],
+      netAnios: [null],
     });
+
+    this.disableAllAniosInputs();
   }
-
-
 
   onCheckboxChange(lenguaje: string, nivel: string, event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;
     const formGroup = (event.target as HTMLInputElement).closest('.form-group');
 
-
     if (isChecked) {
       this.miFormulario.get(`${lenguaje}Nivel`)?.setValue(nivel);
       this.uncheckOtherCheckboxes(formGroup, nivel);
-      this.focusExperienceInput(lenguaje);
+      this.focusExperienceInput(lenguaje, false);
       let nom = `${lenguaje}Anios`;
-      this.miFormulario.get(nom)?.setValidators([Validators.required, Validators.min(0)]);
+      this.miFormulario
+        .get(nom)
+        ?.setValidators([
+          Validators.required,
+          Validators.min(1),
+          Validators.max(30),
+          Validators.pattern('^[0-9]*$'),
+        ]);
+
       this.miFormulario.get(`${lenguaje}Anios`)?.updateValueAndValidity();
-
-
     } else {
       this.miFormulario.get(`${lenguaje}Nivel`)?.setValue('');
-      this.miFormulario.get(`${lenguaje}Anios`)?.setValue('');
+      this.miFormulario.get(`${lenguaje}Anios`)?.setValue(null);
       this.miFormulario.get(`${lenguaje}Anios`)?.clearValidators();
       this.miFormulario.get(`${lenguaje}Anios`)?.updateValueAndValidity();
+      this.focusExperienceInput(lenguaje, true);
     }
   }
 
@@ -76,16 +83,38 @@ export class ConocimientosProgramacionComponent implements OnChanges {
     }
   }
 
-  focusExperienceInput(lenguaje: string): void {
+  focusExperienceInput(lenguaje: string, habiliado: boolean): void {
     const experienceInput = document.querySelector(
       `input[formControlName="${lenguaje}Anios"]`
     ) as HTMLInputElement;
     if (experienceInput) {
+      experienceInput.readOnly = habiliado;
       experienceInput.focus();
     }
   }
 
+  disableAllAniosInputs(): void {
+    Object.keys(this.miFormulario.controls).forEach((controlName) => {
+      if (controlName.endsWith('Anios')) {
+        const control = this.miFormulario.get(controlName);
+        if (control) {
+          //control.disable();
+          const inputElement = document.querySelector(
+            `input[formControlName="${controlName}"]`
+          ) as HTMLInputElement;
+          if (inputElement) {
+            inputElement.readOnly = true;
+          }
+        }
+      }
+    });
+  }
 
+  onInputChange(controlName: string, event: any): void {
+    const value = event.target.value;
+    const integerValue = value.replace(/\D/g, ''); // Elimina cualquier carácter no numérico
+    this.miFormulario.get(controlName)?.setValue(integerValue);
+  }
 }
 
 

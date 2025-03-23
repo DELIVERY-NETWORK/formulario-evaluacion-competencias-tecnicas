@@ -1,0 +1,116 @@
+.fondo {
+  background-image: url('/assets/images/bootcampIA-min.jpg');
+  /* Ruta de la imagen */
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el contenedor */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  min-height: 100vh;
+  /* Altura mínima igual a la altura de la ventana */
+
+  display: flex;
+  /* Asegura que el contenido interno se alinee correctamente */
+  flex-direction: column;
+  justify-content: center;
+  /* Centra el contenido verticalmente */
+  align-items: center;
+  /* Centra el contenido horizontalmente */
+}
+.image-container {
+  width: 100%;
+  height: 100vh;
+  /* Altura del contenedor igual a la altura de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+
+}
+
+.image-container img {
+  width: 95%;
+  /* La imagen ocupará el 80% del ancho del contenedor */
+  height: 70%;
+  /* La imagen ocupará el 60% de la altura del contenedor */
+  object-fit: contain;
+  /* Mantener la proporción de la imagen */
+
+}
+
+
+
+                body {
+                  font-family: Arial, sans-serif;
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                  background-color: #50062b;
+                  color: #ffffff;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  min-height: 100vh;
+                }
+
+                .container {
+                  max-width: 100%;
+                  padding: 20px;
+                  text-align: left;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+
+                img {
+                  width: 100%;
+                  object-fit: cover;
+                  border-radius: 10px;
+                  border: solid 2px #ffffff;
+                  box-shadow: 0 100px 100px 0 rgba(0, 0, 0, 0.8);
+                }
+
+
+.bottom-right-button {
+
+
+  font-size: 20px;
+
+  margin-top: 10px;
+
+  padding: 10px 20px;
+  background-color: #50062b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.bottom-right-button:hover {
+  background-color: #5f1d3e;
+}
+
+.floating-message {
+  /* position: absolute; */
+  bottom: 50px;
+  /* Ajusta según sea necesario */
+  right: 10px;
+  /* Ajusta según sea necesario */
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 5px;
+}
+
+.img-fluid{
+  max-width: 100%;
+    max-height: 90vh;
+
+    width: auto;
+    height: 90%;
+    display: block;
+
+    margin: 0 auto;
+}
