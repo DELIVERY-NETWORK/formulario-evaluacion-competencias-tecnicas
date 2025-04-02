@@ -1,4 +1,4 @@
-import { Component,  inject,  ViewChild } from '@angular/core';
+import { afterNextRender, Component,  inject,  ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ConocimientosProgramacionComponent } from "./components/conocimientos-programacion/conocimientos-programacion.component";
 import { ConocimientosFrameworkEntornosDesarrolloComponent } from "./components/conocimientos-framework-entornos-desarrollo/conocimientos-framework-entornos-desarrollo.component";
@@ -12,6 +12,7 @@ import { SendService } from '../service/send.service';
 import Swal from 'sweetalert2';
 import { timeout } from 'rxjs';
 import { Route, Router } from '@angular/router';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-test-form',
@@ -24,16 +25,18 @@ import { Route, Router } from '@angular/router';
     BaseDatosComponent,
     DesarrolloInterfacesFrontComponent,
     ExperienciaMetodologiasAgilesComponent,
+    RecaptchaFormsModule,
+    RecaptchaModule,
   ],
   templateUrl: './test-form.component.html',
   styleUrl: './test-form.component.css',
 })
 export default class TestFormComponent {
-
   private sendService = inject(SendService);
 
-  flagFormularioInformacion : boolean = false;
-  flagFormularioValido : boolean = true;
+  captchaResponse: string | null = null;
+  flagFormularioInformacion: boolean = false;
+  flagFormularioValido: boolean = true;
 
   title = 'Formulario de Evaluación de Competencias Técnicas';
 
@@ -73,13 +76,15 @@ export default class TestFormComponent {
 
   private appserviceService = inject(AppserviceService);
 
-  constructor(private router:Router) {
+  constructor(private router: Router) {
     this.miFormularioDatos = this.appserviceService.getFormDatos();
   }
 
   updateFormulario(form: FormGroup): void {}
 
   async enviarForm() {
+
+
 
     this.flagFormularioInformacion = false;
     this.flagFormularioValido = true;
@@ -193,41 +198,53 @@ export default class TestFormComponent {
 
     console.log('data:', data);
 
-    if(this.flagFormularioValido){
+    if (this.flagFormularioValido) {
       console.log('Formulario válido:', this.flagFormularioValido);
-      if(!this.flagFormularioInformacion){
+      if (!this.flagFormularioInformacion) {
         Swal.fire({
           title: 'Atencion',
           text: 'No selecciono ninguna opcion en el formulacio',
           icon: 'warning',
         });
         this.isProcessing = false;
+        this.captchaResponse = null;
         return;
       }
-    }else{
+    } else {
       Swal.fire({
         title: 'Validacoin',
         text: 'Existe informacion incompleta en el formulario',
         icon: 'error',
       });
       this.isProcessing = false;
+      this.captchaResponse = null;
       return;
     }
 
-    this.sendService.sendForm(dataAll).subscribe(
-      (response: any) => {
-        console.log('Respuesta:', response);
+    if (this.captchaResponse == null) {
+      Swal.fire({
+        title: 'Atencion',
+        text: 'Debe resolver el captcha',
+        icon: 'warning',
+      });
+      this.isProcessing = false;
+      return;
+    }
 
-
-
+    this.sendService.sendForm(dataAll, this.captchaResponse).subscribe(
+      {
+        next: (response) => {
+          this.isProcessing = false;
           this.router.navigate(['/envio-exito']);
-
-
-
+        },
+        error: (err) => {
+          console.error('Error al enviar el formulario:', err);
+          this.isProcessing = false;
+        }
       }
+
     );
 
-    this.isProcessing = false;
   }
 
   validarFormulario(formGroup: FormGroup, seccion: string): void {
@@ -272,5 +289,12 @@ export default class TestFormComponent {
         }
       );
     });
+  }
+
+  resolved(captchaResponse: any) {
+    this.captchaResponse = captchaResponse;
+    //this.miFormulario.get('recaptcha')?.setValue(captchaResponse);
+    console.log('Captcha resuelto:', captchaResponse);
+    //this.miFormulario.get('recaptcha')?.setValue(captchaResponse);
   }
 }

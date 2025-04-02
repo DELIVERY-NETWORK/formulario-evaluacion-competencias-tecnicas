@@ -18,8 +18,8 @@
   /* Reducir el padding del input de años de experiencia */
   font-size: 0.9rem;
   /* Aumentar el tamaño de la fuente del input de años de experiencia */
-  min-width: 4rem;
-  max-width: 10rem;
+  /* min-width: 4rem;
+  max-width: 10rem; */
 }
 .card {
   background-color: #4F062A;

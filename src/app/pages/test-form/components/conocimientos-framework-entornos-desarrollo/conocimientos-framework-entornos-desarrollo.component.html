@@ -1,151 +1,236 @@
-<div class="card mx-auto mt-4" style="max-width: 850px;">
-  <div class="card-body">
-    <h5 class="card-title">2. Conocimiento y Experiencia con Frameworks y Entornos de Desarrollo</h5>
-    <form [formGroup]="miFormulario"  class="d-flex flex-column p-3">
-      <div class="form-group mb-0">
+<div class="container col-md-12 mb-2">
 
-        <div class="d-flex align-items-center">
-          <label for="nodejs" class="me-3" style="min-width: 100px;">nodejs</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="nodejsNivel" value="Basico" (change)="onCheckboxChange('nodejs', 'Basico', $event)" >
-            <label class="form-check-label">Basico</label>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">2. Conocimiento y Experiencia con Frameworks y Entornos de Desarrollo</h5>
+      <form [formGroup]="miFormulario"  >
+        <div class="form-group ">
+
+          <div class="row d-flex align-items-center">
+
+              <div class="col-sm-2">
+                <label for="nodejs"  style="min-width: 100px;">nodejs</label>
+
+              </div>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="nodejsNivel" value="Basico" (change)="onCheckboxChange('nodejs', 'Basico', $event)" >
+                  <label class="form-check-label">Basico</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="nodejsNivel" value="Intermedio" (change)="onCheckboxChange('nodejs', 'Intermedio', $event)">
+                  <label class="form-check-label">Intermedio</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="nodejsNivel" value="Avanzado" (change)="onCheckboxChange('nodejs', 'Avanzado', $event)">
+                  <label class="form-check-label">Avanzado</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="nodejsNivel" value="Experto" (change)="onCheckboxChange('nodejs', 'Experto', $event)">
+                  <label class="form-check-label">Experto</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="number" step="1" (input)="onInputChange('nodejsAnios', $event)" formControlName="nodejsAnios" class="form-control  experiencia-input" placeholder="Años de Experiencia">
+
+                </div>
+                <div class="form-check form-check-inline">
+                  @if(miFormulario.get('nodejsAnios')?.invalid ){
+                    <div class="text-danger ">
+                      <small>*</small>
+                    </div>
+                  }
+
+                </div>
+
+              </div>
+
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="nodejsNivel" value="Intermedio" (change)="onCheckboxChange('nodejs', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="nodejsNivel" value="Avanzado" (change)="onCheckboxChange('nodejs', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="nodejsNivel" value="Experto" (change)="onCheckboxChange('nodejs', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('nodejsAnios', $event)" formControlName="nodejsAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('nodejsAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
-            </div>
-          }
+
+
         </div>
-      </div>
-      <div class="form-group mb-0">
+        <div class="form-group ">
 
-        <div class="d-flex align-items-center">
-        <label for="react" class="me-3" style="min-width: 100px;">react</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="reactNivel" value="Basico" (change)="onCheckboxChange('react', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
+          <div class="row d-flex align-items-center">
+
+              <div class="col-sm-2">
+                <label for="react"  style="min-width: 100px;">react</label>
+
+              </div>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="reactNivel" value="Basico" (change)="onCheckboxChange('react', 'Basico', $event)">
+                  <label class="form-check-label">Basico</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="reactNivel" value="Intermedio" (change)="onCheckboxChange('react', 'Intermedio', $event)">
+                  <label class="form-check-label">Intermedio</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="reactNivel" value="Avanzado" (change)="onCheckboxChange('react', 'Avanzado', $event)">
+                  <label class="form-check-label">Avanzado</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="reactNivel" value="Experto" (change)="onCheckboxChange('react', 'Experto', $event)" >
+                  <label class="form-check-label">Experto</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="number" step="1" (input)="onInputChange('reactAnios', $event)" formControlName="reactAnios" class="form-control  experiencia-input" placeholder="Años de Experiencia">
+
+                </div>
+                <div class="form-check form-check-inline">
+                  @if(miFormulario.get('reactAnios')?.invalid ){
+                    <div class="text-danger">
+                      <small>*</small>
+                    </div>
+                  }
+
+                </div>
+
+              </div>
+
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="reactNivel" value="Intermedio" (change)="onCheckboxChange('react', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="reactNivel" value="Avanzado" (change)="onCheckboxChange('react', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="reactNivel" value="Experto" (change)="onCheckboxChange('react', 'Experto', $event)" >
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('reactAnios', $event)" formControlName="reactAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('reactAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
-            </div>
-          }
+
+
         </div>
-      </div>
-      <div class="form-group mb-0">
+        <div class="form-group ">
 
-        <div class="d-flex align-items-center">
-          <label for="angular" class="me-3" style="min-width: 100px;">angular</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="angularNivel" value="Basico" (change)="onCheckboxChange('angular', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
+          <div class="row d-flex align-items-center">
+
+              <div class="col-sm-2">
+                <label for="angular"  style="min-width: 100px;">angular</label>
+
+              </div>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="angularNivel" value="Basico" (change)="onCheckboxChange('angular', 'Basico', $event)">
+                  <label class="form-check-label">Basico</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="angularNivel" value="Intermedio" (change)="onCheckboxChange('angular', 'Intermedio', $event)">
+                  <label class="form-check-label">Intermedio</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="angularNivel" value="Avanzado"  (change)="onCheckboxChange('angular', 'Avanzado', $event)">
+                  <label class="form-check-label">Avanzado</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="angularNivel" value="Experto"  (change)="onCheckboxChange('angular', 'Experto', $event)">
+                  <label class="form-check-label">Experto</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="number" step="1" (input)="onInputChange('angularAnios', $event)" formControlName="angularAnios" class="form-control  experiencia-input" placeholder="Años de Experiencia">
+
+                </div>
+                <div class="form-check form-check-inline">
+                  @if(miFormulario.get('angularAnios')?.invalid ){
+                    <div class="text-danger">
+                      <small>*</small>
+                    </div>
+                  }
+
+                </div>
+
+              </div>
+
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="angularNivel" value="Intermedio" (change)="onCheckboxChange('angular', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="angularNivel" value="Avanzado"  (change)="onCheckboxChange('angular', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="angularNivel" value="Experto"  (change)="onCheckboxChange('angular', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('angularAnios', $event)" formControlName="angularAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('angularAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
-            </div>
-          }
+
+
         </div>
-      </div>
 
-      <div class="form-group mb-0">
+        <div class="form-group ">
 
-        <div class="d-flex align-items-center">
-          <label for="django" class="me-3" style="min-width: 100px;">DJango/Flask</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="djangoNivel" value="Basico"  (change)="onCheckboxChange('django', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
+          <div class="row d-flex align-items-center">
+
+              <div class="col-sm-2">
+                <label for="django"  style="min-width: 100px;">DJango/Flask</label>
+
+              </div>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="djangoNivel" value="Basico"  (change)="onCheckboxChange('django', 'Basico', $event)">
+                  <label class="form-check-label">Basico</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="djangoNivel" value="Intermedio"  (change)="onCheckboxChange('django', 'Intermedio', $event)">
+                  <label class="form-check-label">Intermedio</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="djangoNivel" value="Avanzado" (change)="onCheckboxChange('django', 'Avanzado', $event)">
+                  <label class="form-check-label">Avanzado</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="djangoNivel" value="Experto"  (change)="onCheckboxChange('django', 'Experto', $event)">
+                  <label class="form-check-label">Experto</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="number" step="1" (input)="onInputChange('djangoAnios', $event)" formControlName="djangoAnios" class="form-control  experiencia-input" placeholder="Años de Experiencia">
+
+                </div>
+                <div class="form-check form-check-inline">
+                  @if(miFormulario.get('djangoAnios')?.invalid ){
+                    <div class="text-danger">
+                      <small>*</small>
+                    </div>
+                  }
+
+                </div>
+
+              </div>
+
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="djangoNivel" value="Intermedio"  (change)="onCheckboxChange('django', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="djangoNivel" value="Avanzado" (change)="onCheckboxChange('django', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="djangoNivel" value="Experto"  (change)="onCheckboxChange('django', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('djangoAnios', $event)" formControlName="djangoAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('djangoAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
-            </div>
-          }
+
+
         </div>
-      </div>
 
-      <div class="form-group mb-0">
+        <div class="form-group ">
 
-        <div class="d-flex align-items-center">
-          <label for="django" class="me-3" style="min-width: 100px;">FastApi</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="fastapiNivel" value="Basico"  (change)="onCheckboxChange('fastapi', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
+          <div class="row d-flex align-items-center">
+
+              <div class="col-sm-2">
+                <label for="django"  style="min-width: 100px;">FastApi</label>
+
+              </div>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="fastapiNivel" value="Basico"  (change)="onCheckboxChange('fastapi', 'Basico', $event)">
+                  <label class="form-check-label">Basico</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="fastapiNivel" value="Intermedio"  (change)="onCheckboxChange('fastapi', 'Intermedio', $event)">
+                  <label class="form-check-label">Intermedio</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="fastapiNivel" value="Avanzado" (change)="onCheckboxChange('fastapi', 'Avanzado', $event)">
+                  <label class="form-check-label">Avanzado</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="fastapiNivel" value="Experto"  (change)="onCheckboxChange('fastapi', 'Experto', $event)">
+                  <label class="form-check-label">Experto</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="number" step="1" (input)="onInputChange('fastapiAnios', $event)" formControlName="fastapiAnios" class="form-control  experiencia-input" placeholder="Años de Experiencia">
+
+                </div>
+                <div class="form-check form-check-inline">
+                  @if(miFormulario.get('fastapiAnios')?.invalid ){
+                    <div class="text-danger">
+                      <small>*</small>
+                    </div>
+                  }
+
+                </div>
+
+              </div>
+
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="fastapiNivel" value="Intermedio"  (change)="onCheckboxChange('fastapi', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="fastapiNivel" value="Avanzado" (change)="onCheckboxChange('fastapi', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="fastapiNivel" value="Experto"  (change)="onCheckboxChange('fastapi', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('fastapiAnios', $event)" formControlName="fastapiAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('fastapiAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
-            </div>
-          }
+
         </div>
-      </div>
 
-    </form>
+      </form>
+    </div>
   </div>
+
+
+
 </div>
 

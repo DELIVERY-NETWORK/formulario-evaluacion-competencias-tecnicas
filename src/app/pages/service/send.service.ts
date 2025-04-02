@@ -18,7 +18,7 @@ export class SendService {
 
   constructor(private http: HttpClient) {}
 
-  sendForm(data: any) {
+  sendForm(data: any, captcha: string) {
     const controller = 'test';
     const evento = 'send';
 
@@ -33,10 +33,10 @@ export class SendService {
 
     //const miurl = 'https://api.cloud2recruiting.com:8080/test/create';
     const miurl = environment.dominio + '/test/create'; // 'https://api.cloud2recruiting.com/test/create';
-    console.log(miurl);
-    return this.http.post(miurl, data, { headers: this.httpHeaders }).pipe(
-      catchError((e) => {
+    const headersWithCaptcha = this.httpHeaders.set('Captcha', captcha);
 
+    return this.http.post(miurl, data, { headers: headersWithCaptcha }).pipe(
+      catchError((e) => {
         console.error(e.error.mensaje);
         this.messagesService.message_error('Atencion', e.error.mensaje);
         return throwError(() => e.error);

@@ -1,40 +1,53 @@
-<div class="card mx-auto mt-4" style="max-width: 850px;">
-  <div class="card-body">
-    <h5 class="card-title">6. Desarrollo de Interfaces Frontend</h5>
-    <form [formGroup]="miFormulario" class="d-flex flex-column p-3">
-      <div class="form-group mb-0">
-        <div class="d-flex flex-column align-items-start">
+<div class="container mb-2">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">6. Desarrollo de Interfaces Frontend</h5>
+      <form [formGroup]="miFormulario">
+        <div class="form-group">
+
           <div class="mb-2">
-            <label for="frontend" class="me-3" style="min-width: 100px;">¿Cuál es tu experiencia en la creación de interfaces de usuario funcionales y centradas en la experiencia del usuario?</label>
+            <label for="frontend">¿Cuál es tu experiencia en la creación de interfaces de usuario funcionales y centradas en la experiencia del usuario?</label>
           </div>
-          <div class="form-check mb-2">
-            <input class="form-check-input" id="1" type="checkbox" formControlName="frontendNivel" value="Basico" (change)="onCheckboxChange('frontend', 'Basico', $event)">
-            <label class="form-check-label">No tengo experiencia</label>
-          </div>
-          <div class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" formControlName="frontendNivel" value="Intermedio" (change)="onCheckboxChange('frontend', 'Intermedio', $event)">
-            <label class="form-check-label">He trabajado en pequeños proyectos</label>
-          </div>
-          <div class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" formControlName="frontendNivel" value="Avanzado" (change)="onCheckboxChange('frontend', 'Avanzado', $event)">
-            <label class="form-check-label">Tengo experiencia en proyectos medianos/grandes</label>
-          </div>
-          <div class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" formControlName="frontendNivel" value="Experto" (change)="onCheckboxChange('frontend', 'Experto', $event)">
-            <label class="form-check-label">Soy experto en desarrollo frontend</label>
-          </div>
-          <div class="d-flex align-items-center mt-2">
-            <input type="number" step="1" (input)="onInputChange('frontendAnios', $event)"  formControlName="frontendAnios" class="form-control experiencia-input mt-2" placeholder="Años de Experiencia">
-            @if(miFormulario.get('frontendAnios')?.invalid ){
-              <div class="text-danger mt-1 ms-2">
-                <small>*</small>
+
+          <div class="container">
+            <div class="row">
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" id="1" type="checkbox" formControlName="frontendNivel" value="Basico" (change)="onCheckboxChange('frontend', 'Basico', $event)">
+                  <label class="form-check-label">No tengo experiencia</label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" formControlName="frontendNivel" value="Intermedio" (change)="onCheckboxChange('frontend', 'Intermedio', $event)">
+                  <label class="form-check-label">He trabajado en pequeños proyectos</label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" formControlName="frontendNivel" value="Avanzado" (change)="onCheckboxChange('frontend', 'Avanzado', $event)">
+                  <label class="form-check-label">Tengo experiencia en proyectos medianos/grandes</label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" formControlName="frontendNivel" value="Experto" (change)="onCheckboxChange('frontend', 'Experto', $event)">
+                  <label class="form-check-label">Soy experto en desarrollo frontend</label>
+                </div>
+
+              <div class="col-6 col-sm-4 col-md-2 col-lg-3 col-xl-3 col-xxl-3">
+                <input type="number" step="1" (input)="onInputChange('frontendAnios', $event)"  formControlName="frontendAnios" class="form-control experiencia-input mt-2" placeholder="Años de Experiencia">
               </div>
-            }
+              <div class="col-1 text-danger">
+                @if(miFormulario.get('frontendAnios')?.invalid ){
+                    <small>*</small>
+                }
+              </div>
+            </div>
 
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
+
+
 </div>
 

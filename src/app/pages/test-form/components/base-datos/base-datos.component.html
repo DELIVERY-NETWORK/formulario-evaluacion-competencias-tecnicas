@@ -1,211 +1,301 @@
-<div class="card mx-auto mt-4" style="max-width: 850px;">
-  <div class="card-body">
-    <h5 class="card-title">5. Base de datos</h5>
-    <form [formGroup]="miFormulario"  class="d-flex flex-column p-3">
-      <div class="form-group mb-0">
+<div  class="container col-md-12 mb-2">
 
-        <div class="d-flex align-items-center">
-          <label for="postgres" class="me-3" style="min-width: 100px;">PostgresSql</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="postgresNivel" value="Basico" (change)="onCheckboxChange('postgres', 'Basico', $event)" >
-            <label class="form-check-label">Basico</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="postgresNivel" value="Intermedio" (change)="onCheckboxChange('postgres', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="postgresNivel" value="Avanzado" (change)="onCheckboxChange('postgres', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="postgresNivel" value="Experto" (change)="onCheckboxChange('postgres', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('postgresAnios', $event)" formControlName="postgresAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('postgresAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">5. Base de datos</h5>
+      <form [formGroup]="miFormulario"  >
+        <div class="form-group">
+
+          <div class="row d-flex align-items-center">
+            <div class="col-sm-2">
+              <label for="postgres"style="min-width: 100px;">PostgresSql</label>
+
             </div>
-          }
-        </div>
-      </div>
-      <div class="form-group mb-0">
+            <div class="col-sm-8">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="postgresNivel" value="Basico" (change)="onCheckboxChange('postgres', 'Basico', $event)" >
+                <label class="form-check-label">Basico</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="postgresNivel" value="Intermedio" (change)="onCheckboxChange('postgres', 'Intermedio', $event)">
+                <label class="form-check-label">Intermedio</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="postgresNivel" value="Avanzado" (change)="onCheckboxChange('postgres', 'Avanzado', $event)">
+                <label class="form-check-label">Avanzado</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="postgresNivel" value="Experto" (change)="onCheckboxChange('postgres', 'Experto', $event)">
+                <label class="form-check-label">Experto</label>
+              </div>
+              <div  class="form-check form-check-inline">
+                <input type="number" step="1" (input)="onInputChange('postgresAnios', $event)" formControlName="postgresAnios" class="form-control experiencia-input" placeholder="Años de Experiencia">
 
-        <div class="d-flex align-items-center">
-        <label for="mongodb" class="me-3" style="min-width: 100px;">MongoDb</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="mongodbNivel" value="Basico" (change)="onCheckboxChange('mongodb', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="mongodbNivel" value="Intermedio" (change)="onCheckboxChange('mongodb', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="mongodbNivel" value="Avanzado" (change)="onCheckboxChange('mongodb', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="mongodbNivel" value="Experto" (change)="onCheckboxChange('mongodb', 'Experto', $event)" >
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('mongodbAnios', $event)" formControlName="mongodbAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('mongodbAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
+              </div>
+              <div  class="form-check form-check-inline">
+                @if(miFormulario.get('postgresAnios')?.invalid ){
+                  <div class="text-danger">
+                    <small>*</small>
+                  </div>
+                }
+
+              </div>
+
             </div>
-          }
+          </div>
         </div>
-      </div>
-      <div class="form-group mb-0">
 
-        <div class="d-flex align-items-center">
-          <label for="mysql" class="me-3" style="min-width: 100px;">MySql</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="mysqlNivel" value="Basico" (change)="onCheckboxChange('mysql', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="mysqlNivel" value="Intermedio" (change)="onCheckboxChange('mysql', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="mysqlNivel" value="Avanzado"  (change)="onCheckboxChange('mysql', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="mysqlNivel" value="Experto"  (change)="onCheckboxChange('mysql', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('mysqlAnios', $event)" formControlName="mysqlAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('mysqlAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
+        <div class="form-group ">
+
+          <div class="row">
+            <div class="col-sm-2">
+              <label for="mongodb"  style="min-width: 100px;">MongoDb</label>
+
             </div>
-          }
-        </div>
-      </div>
+            <div class="col-sm-8">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="mongodbNivel" value="Basico" (change)="onCheckboxChange('mongodb', 'Basico', $event)">
+                <label class="form-check-label">Basico</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="mongodbNivel" value="Intermedio" (change)="onCheckboxChange('mongodb', 'Intermedio', $event)">
+                <label class="form-check-label">Intermedio</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="mongodbNivel" value="Avanzado" (change)="onCheckboxChange('mongodb', 'Avanzado', $event)">
+                <label class="form-check-label">Avanzado</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="mongodbNivel" value="Experto" (change)="onCheckboxChange('mongodb', 'Experto', $event)" >
+                <label class="form-check-label">Experto</label>
+              </div>
+              <div  class="form-check form-check-inline">
+                <input type="number" step="1" (input)="onInputChange('mongodbAnios', $event)" formControlName="mongodbAnios" class="form-control experiencia-input" placeholder="Años de Experiencia">
+              </div>
+              <div  class="form-check form-check-inline">
+                @if(miFormulario.get('mongodbAnios')?.invalid ){
+                  <div class="text-danger">
+                    <small>*</small>
+                  </div>
+                }
 
-      <div class="form-group mb-0">
+              </div>
 
-        <div class="d-flex align-items-center">
-          <label for="bigquery" class="me-3" style="min-width: 100px;">BigQuery</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="bigqueryNivel" value="Basico"  (change)="onCheckboxChange('bigquery', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="bigqueryNivel" value="Intermedio"  (change)="onCheckboxChange('bigquery', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="bigqueryNivel" value="Avanzado" (change)="onCheckboxChange('bigquery', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="bigqueryNivel" value="Experto"  (change)="onCheckboxChange('bigquery', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('bigqueryAnios', $event)" formControlName="bigqueryAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('bigqueryAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
             </div>
-          }
+          </div>
         </div>
-      </div>
+        <div class="form-group ">
 
+          <div class="row">
+            <div class="col-sm-2">
+              <label for="mysql"  style="min-width: 100px;">MySql</label>
 
-      <div class="form-group mb-0">
-
-        <div class="d-flex align-items-center">
-          <label for="redshift" class="me-3" style="min-width: 100px;">Redshift</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="redshiftNivel" value="Basico"  (change)="onCheckboxChange('redshift', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="redshiftNivel" value="Intermedio"  (change)="onCheckboxChange('redshift', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="redshiftNivel" value="Avanzado" (change)="onCheckboxChange('redshift', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="redshiftNivel" value="Experto"  (change)="onCheckboxChange('redshift', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('redshiftAnios', $event)" formControlName="redshiftAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('redshiftAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
             </div>
-          }
-        </div>
-      </div>
+            <div class="col-sm-8">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="mysqlNivel" value="Basico" (change)="onCheckboxChange('mysql', 'Basico', $event)">
+                <label class="form-check-label">Basico</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="mysqlNivel" value="Intermedio" (change)="onCheckboxChange('mysql', 'Intermedio', $event)">
+                <label class="form-check-label">Intermedio</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="mysqlNivel" value="Avanzado"  (change)="onCheckboxChange('mysql', 'Avanzado', $event)">
+                <label class="form-check-label">Avanzado</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="mysqlNivel" value="Experto"  (change)="onCheckboxChange('mysql', 'Experto', $event)">
+                <label class="form-check-label">Experto</label>
+              </div>
+              <div  class="form-check form-check-inline">
+                <input type="number" step="1" (input)="onInputChange('mysqlAnios', $event)" formControlName="mysqlAnios" class="form-control experiencia-input" placeholder="Años de Experiencia">
 
-      <div class="form-group mb-0">
+              </div>
+              <div  class="form-check form-check-inline">
+                @if(miFormulario.get('mysqlAnios')?.invalid ){
+                  <div class="text-danger">
+                    <small>*</small>
+                  </div>
+                }
 
-        <div class="d-flex align-items-center">
-          <label for="snowflake" class="me-3" style="min-width: 100px;">Snowflake</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="snowflakeNivel" value="Basico"  (change)="onCheckboxChange('snowflake', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="snowflakeNivel" value="Intermedio"  (change)="onCheckboxChange('snowflake', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="snowflakeNivel" value="Avanzado" (change)="onCheckboxChange('snowflake', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="snowflakeNivel" value="Experto"  (change)="onCheckboxChange('snowflake', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('snowflakeAnios', $event)" formControlName="snowflakeAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('snowflakeAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
+              </div>
+
             </div>
-          }
+          </div>
         </div>
-      </div>
-      <div class="form-group mb-0">
 
-        <div class="d-flex align-items-center">
-          <label for="apachekafka" class="me-3" style="min-width: 100px;">Apache Kafka</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="apachekafkaNivel" value="Basico"  (change)="onCheckboxChange('apachekafka', 'Basico', $event)">
-            <label class="form-check-label">Basico</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="apachekafkaNivel" value="Intermedio"  (change)="onCheckboxChange('apachekafka', 'Intermedio', $event)">
-            <label class="form-check-label">Intermedio</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="apachekafkaNivel" value="Avanzado" (change)="onCheckboxChange('apachekafka', 'Avanzado', $event)">
-            <label class="form-check-label">Avanzado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" formControlName="apachekafkaNivel" value="Experto"  (change)="onCheckboxChange('apachekafka', 'Experto', $event)">
-            <label class="form-check-label">Experto</label>
-          </div>
-          <input type="number" step="1" (input)="onInputChange('apachekafkaAnios', $event)" formControlName="apachekafkaAnios" class="form-control ms-3 experiencia-input" placeholder="Años de Experiencia">
-          @if(miFormulario.get('apachekafkaAnios')?.invalid ){
-            <div class="text-danger mt-1 ms-2">
-              <small>*</small>
+        <div class="form-group ">
+
+          <div class="row">
+            <div class="col-sm-2">
+              <label for="bigquery"  style="min-width: 100px;">BigQuery</label>
+
             </div>
-          }
+            <div class="col-sm-8">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="bigqueryNivel" value="Basico"  (change)="onCheckboxChange('bigquery', 'Basico', $event)">
+                <label class="form-check-label">Basico</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="bigqueryNivel" value="Intermedio"  (change)="onCheckboxChange('bigquery', 'Intermedio', $event)">
+                <label class="form-check-label">Intermedio</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="bigqueryNivel" value="Avanzado" (change)="onCheckboxChange('bigquery', 'Avanzado', $event)">
+                <label class="form-check-label">Avanzado</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="bigqueryNivel" value="Experto"  (change)="onCheckboxChange('bigquery', 'Experto', $event)">
+                <label class="form-check-label">Experto</label>
+              </div>
+              <div  class="form-check form-check-inline">
+                <input type="number" step="1" (input)="onInputChange('bigqueryAnios', $event)" formControlName="bigqueryAnios" class="form-control experiencia-input" placeholder="Años de Experiencia">
+
+              </div>
+              <div  class="form-check form-check-inline">
+                @if(miFormulario.get('bigqueryAnios')?.invalid ){
+                  <div class="text-danger">
+                    <small>*</small>
+                  </div>
+                }
+
+              </div>
+
+            </div>
+          </div>
         </div>
-      </div>
+
+
+        <div class="form-group">
+
+          <div class="row">
+            <div class="col-sm-2">
+              <label for="redshift"  style="min-width: 100px;">Redshift</label>
+
+            </div>
+            <div class="col-sm-8">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="redshiftNivel" value="Basico"  (change)="onCheckboxChange('redshift', 'Basico', $event)">
+                <label class="form-check-label">Basico</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="redshiftNivel" value="Intermedio"  (change)="onCheckboxChange('redshift', 'Intermedio', $event)">
+                <label class="form-check-label">Intermedio</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="redshiftNivel" value="Avanzado" (change)="onCheckboxChange('redshift', 'Avanzado', $event)">
+                <label class="form-check-label">Avanzado</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="redshiftNivel" value="Experto"  (change)="onCheckboxChange('redshift', 'Experto', $event)">
+                <label class="form-check-label">Experto</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="number" step="1" (input)="onInputChange('redshiftAnios', $event)" formControlName="redshiftAnios" class="form-control experiencia-input" placeholder="Años de Experiencia">
+
+              </div>
+              <div class="form-check form-check-inline">
+                @if(miFormulario.get('redshiftAnios')?.invalid ){
+                  <div class="text-danger">
+                    <small>*</small>
+                  </div>
+                }
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+
+          <div class="row">
+            <div class="col-sm-2">
+              <label for="snowflake"  style="min-width: 100px;">Snowflake</label>
+
+            </div>
+            <div class="col-sm-8">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="snowflakeNivel" value="Basico"  (change)="onCheckboxChange('snowflake', 'Basico', $event)">
+                <label class="form-check-label">Basico</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="snowflakeNivel" value="Intermedio"  (change)="onCheckboxChange('snowflake', 'Intermedio', $event)">
+                <label class="form-check-label">Intermedio</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="snowflakeNivel" value="Avanzado" (change)="onCheckboxChange('snowflake', 'Avanzado', $event)">
+                <label class="form-check-label">Avanzado</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="snowflakeNivel" value="Experto"  (change)="onCheckboxChange('snowflake', 'Experto', $event)">
+                <label class="form-check-label">Experto</label>
+              </div>
+              <div  class="form-check form-check-inline">
+                <input type="number" step="1" (input)="onInputChange('snowflakeAnios', $event)" formControlName="snowflakeAnios" class="form-control experiencia-input" placeholder="Años de Experiencia">
+
+              </div>
+              <div  class="form-check form-check-inline">
+                @if(miFormulario.get('snowflakeAnios')?.invalid ){
+                  <div class="text-danger">
+                    <small>*</small>
+                  </div>
+                }
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+
+          <div class="row">
+            <div class="col-sm-2">
+              <label for="apachekafka"  style="min-width: 100px;">Apache Kafka</label>
+
+            </div>
+            <div class="col-sm-8">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="apachekafkaNivel" value="Basico"  (change)="onCheckboxChange('apachekafka', 'Basico', $event)">
+                <label class="form-check-label">Basico</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="apachekafkaNivel" value="Intermedio"  (change)="onCheckboxChange('apachekafka', 'Intermedio', $event)">
+                <label class="form-check-label">Intermedio</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="apachekafkaNivel" value="Avanzado" (change)="onCheckboxChange('apachekafka', 'Avanzado', $event)">
+                <label class="form-check-label">Avanzado</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="apachekafkaNivel" value="Experto"  (change)="onCheckboxChange('apachekafka', 'Experto', $event)">
+                <label class="form-check-label">Experto</label>
+              </div>
+              <div  class="form-check form-check-inline">
+                <input type="number" step="1" (input)="onInputChange('apachekafkaAnios', $event)" formControlName="apachekafkaAnios" class="form-control experiencia-input" placeholder="Años de Experiencia">
+
+              </div>
+              <div  class="form-check form-check-inline">
+                @if(miFormulario.get('apachekafkaAnios')?.invalid ){
+                  <div class="text-danger">
+                    <small>*</small>
+                  </div>
+                }
+
+              </div>
+
+            </div>
+          </div>
+        </div>
 
 
 
-    </form>
+      </form>
+    </div>
   </div>
-</div>
 
+
+
+
+</div>
